@@ -32,7 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'add_time',
                 'value'=>function($model){// 形参为此行记录对象
                     return date("Y-m-d H:i:s",$model->add_time);
-                }
+                },
+                'contentOptions'=>['style' => 'width:87%;'],                
             ],
             [
                 'attribute'=>'status',
@@ -42,15 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute'=>'admin_id',
-                'value'=>function($model){// 形参为此行记录对象
-                    return $model->admin_id ?  : "";
-                }
+                'value'=>$adminname,
             ], 
             'reply',
             [
                 'attribute'=>'reply_time',
                 'value'=>function($model){// 形参为此行记录对象
-                    return $model->reply_time ? date("Y-m-d H:i:s",$model->reply_time) : "";
+                    return $model->reply_time >0 ? date("Y-m-d H:i:s",$model->reply_time) : "---";
                 }
             ],            
         ],

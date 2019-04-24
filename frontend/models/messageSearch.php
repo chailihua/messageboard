@@ -49,6 +49,7 @@ class messageSearch extends message
             'pagination'=>["pageSize"=>5],
             'sort'  => [                        // sort 用于排序
                 'defaultOrder' => [
+                    'status' => SORT_ASC,          // defaultOrder 指定默认排序字段
                     'id' => SORT_DESC,          // defaultOrder 指定默认排序字段
                 ],
             ],
@@ -63,6 +64,10 @@ class messageSearch extends message
         }
 
         // grid filtering conditions
+        // print_r($this);
+        // echo "*******";
+        // echo $this->user_id;
+        // die;
         $query->andFilterWhere([
             'id' => $this->id,
             'user_id' => $this->user_id,

@@ -11,10 +11,6 @@ $this->title = '登录';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-
-
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
@@ -33,6 +29,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="form-group">
                     <?= Html::submitButton('登录', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <?= Html::a('去注册', ["site/signup"], [
+                        'class' => 'btn btn-info',
+                    ]) ?> 
+                    <style type="text/css">
+                        .btn-info{
+                            background-color:#337ab7;
+                        }
+                        .btn-info:hover{
+                            background-color:#204d74;
+                        }                        
+                    </style>                     
                 </div>
 
             <?php ActiveForm::end(); ?>

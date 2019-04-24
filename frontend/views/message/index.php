@@ -27,8 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            'id',
-            'message',
+            [
+                'attribute'=>'id',
+                'contentOptions'=>['style' => 'width: 20px;', 'class' => 'text-center'],
+            ],
+            [
+                'attribute'=>'message',
+                'value'=>function($model){// 形参为此行记录对象
+                    return mb_strlen($model->message,'utf-8') > 38 ? mb_substr($model->message,0,38,'utf-8')."..." : $model->message;
+                }
+            ],
             [
                 'attribute'=>'add_time',
                 'value'=>function($model){// 形参为此行记录对象
@@ -38,14 +46,33 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'status',
                 'value'=>function($model){// 形参为此行记录对象
-                    return $model->reply == "" ? "待回复" :"已回复";
-                }
+                    return $model->status == 0 ? "待回复" :"已回复";
+                },
+                'contentOptions' => function($model){
+                    return $model->status == 0 ? ['style' => 'color:#333']:['style' => 'color:#5bc0de'];
+                },                
             ],
-            // 'admin_id',
-            //'reply',
-            //'reply_time',
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template'=>'{view-btn}&nbsp;&nbsp;&nbsp;&nbsp;{del-btn}',
+                'header' => '操作',
+                'buttons'=>[
+                    'view-btn'=>function($url,$model,$key){
+                        return Html::a('详情', ['view', 'id' => $model->id],['class' => 'btn btn-info']);
+                    },
+                    'del-btn'=>function($url,$model,$key){
+                        return Html::a('删除', ['delete', 'id' => $model->id], [
+                                                'class' => 'btn btn-danger',
+                                                'data'  => [
+                                                            'confirm' => '确认删除,删除后不可恢复?',
+                                                            'method' => 'post',
+                                                        ],
+                                                ]);
+                    }                    
 
-            ['class' => 'yii\grid\ActionColumn'],
+                ],
+
+            ],
         ],
     ]); ?>
 

@@ -14,19 +14,30 @@ use yii\filters\VerbFilter;
  */
 class MessageController extends Controller
 {
+    public $user_id;
+    public function init(){
+        parent::init();
+        if(Yii::$app->user->isGuest){
+            //未登录
+            Yii::$app->getSession()->setFlash('error', '请先登录');
+            return $this->redirect(['/site/login']);        
+        }else{
+            $this->user_id = Yii::$app->user->identity->id;
+        }
+    }
     /**
      * {@inheritdoc}
      */
     public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+            return [
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'delete' => ['POST'],
+                    ],
                 ],
-            ],
-        ];
+            ];
     }
 
     /**
@@ -35,10 +46,9 @@ class MessageController extends Controller
      */
     public function actionIndex()
     {
-        // $this->layout = false;
+        $_GET["messageSearch"]["user_id"] = $this->user_id;
         $searchModel = new messageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -53,8 +63,16 @@ class MessageController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $admin  = \backend\models\User::find()->select("username")->andWhere(['id' => $model->admin_id])->one(); 
+        if($admin){
+            $adminname = $admin->username;
+        }else{
+            $adminname = "---";
+        }        
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model'     => $model,
+            'adminname' => $adminname,
         ]);
     }
 
@@ -65,16 +83,12 @@ class MessageController extends Controller
      */
     public function actionCreate()
     {
-        if(Yii::$app->user->isGuest === true){
-            Yii::$app->getSession()->setFlash('error', '请先登录');
-            return $this->redirect(['/site/login']);
-        }
         Yii::$app->language = 'zh-CN';
         $model = new message();
-;
         if ($model->load(Yii::$app->request->post())) {
-            $model->user_id  = Yii::$app->user->identity->id;
+            $model->user_id  = $this->user_id;
             $model->add_time = time();
+            $model->status   = 0;
             $model->save();
             return $this->redirect(['index']);
         }
@@ -95,7 +109,6 @@ class MessageController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -114,8 +127,7 @@ class MessageController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        $model = $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 
@@ -129,9 +141,13 @@ class MessageController extends Controller
     protected function findModel($id)
     {
         if (($model = message::findOne($id)) !== null) {
+            if($model->user_id != $this->user_id){
+                throw new NotFoundHttpException('异常操作');
+            }            
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+   
 }
