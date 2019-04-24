@@ -41,5 +41,5 @@
 # /backend/web/index.php
 # /backend/web/index-test.php
 # /backend/web/robots.txt
-/frontend/runtime
-/backend/runtime
+/frontend/runtime/
+/backend/runtime/
