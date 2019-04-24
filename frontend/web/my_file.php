@@ -1,0 +1,4 @@
+
+ names1---["id","username","auth_key","verification_token","password_hash","password_reset_token","email","role","status","created_at","updated_at"]
+ names1---{"id":0,"username":1,"auth_key":2,"verification_token":3,"password_hash":4,"password_reset_token":5,"email":6,"role":7,"status":8,"created_at":9,"updated_at":10}
+ _attributes---{"username":"\u5f20\u957f\u751f","email":"175@qq.com","password_hash":"$2y$13$y0jUEm2.0g653flzl0\/OouLfhVEpLaAaQ68KX94uM8TixXHpm7LJa","auth_key":"9bZndMDWHjsenBrq24yY0Omd7BI4Ml3C","verification_token":"Z5pChyzkHhwUA-4WVf9MTGfESvbIQPoA_1555983346","status":9,"created_at":1555983346,"updated_at":1555983346}

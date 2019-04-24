@@ -1,0 +1,706 @@
+2019-04-23 16:14:17 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: frontend\models\messageSearch::status in D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 D:\project\advanced\messageboard\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('status')
+#1 D:\project\advanced\messageboard\vendor\yiisoft\yii2\validators\Validator.php(254): yii\db\BaseActiveRecord->__get('status')
+#2 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Model.php(367): yii\validators\Validator->validateAttributes(Object(frontend\models\messageSearch), Array)
+#3 D:\project\advanced\messageboard\frontend\models\messageSearch.php(54): yii\base\Model->validate()
+#4 D:\project\advanced\messageboard\frontend\controllers\MessageController.php(39): frontend\models\messageSearch->search(Array)
+#5 [internal function]: frontend\controllers\MessageController->actionIndex()
+#6 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(158): yii\base\InlineAction->runWithParams(Array)
+#8 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 D:\project\advanced\messageboard\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('message/index', Array)
+#10 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\project\advanced\messageboard\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2019-04-23 16:14:17 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][info][application] $_GET = [
+    'r' => 'message/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'i5nul078kciu4ciq2eeasneph2'
+    '_identity-frontend' => '407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga\",2592000]\";}'
+    '_csrf-frontend' => 'ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\86135\\AppData\\Roaming'
+    'CLASSPATH' => '.;D:\\soft\\jdk\\lib\\dt.jar;D:\\soft\\jdk\\lib\\tools.jar;'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-IAOL3F7'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\86135'
+    'JAVA_HOME' => 'D:\\soft\\jdk'
+    'LOCALAPPDATA' => 'C:\\Users\\86135\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-IAOL3F7'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\86135\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'D:\\soft\\xshell\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\soft\\Tortoise\\bin;D:\\soft\\Git\\cmd;D:\\soft\\jdk\\bin;D:\\phpstudy\\PHPTutorial\\php\\php-7.2.1-nts;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpstudy\\PHPTutorial\\MySQL\\bin;D:\\soft\\redis\\;C:\\Users\\86135\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\86135\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 142 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-IAOL3F7'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-IAOL3F7'
+    'USERNAME' => '86135'
+    'USERPROFILE' => 'C:\\Users\\86135'
+    'WEBKIT_IGNORE_SSL_ERRORS' => '1'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'Installer'
+    'HTTP_COOKIE' => 'advanced-frontend=i5nul078kciu4ciq2eeasneph2; _identity-frontend=407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'www.message.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'www.message.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62623'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=message%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=message%2Findex'
+    'PATH_TRANSLATED' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => 'D:\\project\\advanced\\messageboard\\frontend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1556036057.3623
+    'REQUEST_TIME' => 1556036057
+]
+2019-04-23 16:18:26 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: frontend\models\Message::status in D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 D:\project\advanced\messageboard\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('status')
+#1 D:\project\advanced\messageboard\frontend\views\message\index.php(41): yii\db\BaseActiveRecord->__get('status')
+#2 [internal function]: yii\base\View->{closure}(Object(frontend\models\Message), '1', 0, Object(yii\grid\DataColumn))
+#3 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\DataColumn.php(230): call_user_func(Object(Closure), Object(frontend\models\Message), '1', 0, Object(yii\grid\DataColumn))
+#4 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\DataColumn.php(244): yii\grid\DataColumn->getDataCellValue(Object(frontend\models\Message), '1', 0)
+#5 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\Column.php(111): yii\grid\DataColumn->renderDataCellContent(Object(frontend\models\Message), '1', 0)
+#6 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\GridView.php(525): yii\grid\Column->renderDataCell(Object(frontend\models\Message), '1', 0)
+#7 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\GridView.php(494): yii\grid\GridView->renderTableRow(Object(frontend\models\Message), '1', 0)
+#8 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\GridView.php(358): yii\grid\GridView->renderTableBody()
+#9 D:\project\advanced\messageboard\vendor\yiisoft\yii2\widgets\BaseListView.php(160): yii\grid\GridView->renderItems()
+#10 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{items}')
+#11 D:\project\advanced\messageboard\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 D:\project\advanced\messageboard\vendor\yiisoft\yii2\widgets\BaseListView.php(138): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 D:\project\advanced\messageboard\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#15 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#16 D:\project\advanced\messageboard\frontend\views\message\index.php(24): yii\base\Widget::widget(Array)
+#17 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(348): require('D:\\project\\adva...')
+#18 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\project\\adva...', Array)
+#19 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\project\\adva...', Array, Object(frontend\controllers\MessageController))
+#20 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\View->render('index', Array, Object(frontend\controllers\MessageController))
+#21 D:\project\advanced\messageboard\frontend\controllers\MessageController.php(43): yii\base\Controller->render('index', Array)
+#22 [internal function]: frontend\controllers\MessageController->actionIndex()
+#23 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#24 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(158): yii\base\InlineAction->runWithParams(Array)
+#25 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#26 D:\project\advanced\messageboard\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('message/index', Array)
+#27 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 D:\project\advanced\messageboard\frontend\web\index.php(17): yii\base\Application->run()
+#29 {main}
+2019-04-23 16:18:25 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][info][application] $_GET = [
+    'r' => 'message/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'i5nul078kciu4ciq2eeasneph2'
+    '_identity-frontend' => '407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga\",2592000]\";}'
+    '_csrf-frontend' => 'ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\86135\\AppData\\Roaming'
+    'CLASSPATH' => '.;D:\\soft\\jdk\\lib\\dt.jar;D:\\soft\\jdk\\lib\\tools.jar;'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-IAOL3F7'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\86135'
+    'JAVA_HOME' => 'D:\\soft\\jdk'
+    'LOCALAPPDATA' => 'C:\\Users\\86135\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-IAOL3F7'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\86135\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'D:\\soft\\xshell\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\soft\\Tortoise\\bin;D:\\soft\\Git\\cmd;D:\\soft\\jdk\\bin;D:\\phpstudy\\PHPTutorial\\php\\php-7.2.1-nts;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpstudy\\PHPTutorial\\MySQL\\bin;D:\\soft\\redis\\;C:\\Users\\86135\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\86135\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 142 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-IAOL3F7'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-IAOL3F7'
+    'USERNAME' => '86135'
+    'USERPROFILE' => 'C:\\Users\\86135'
+    'WEBKIT_IGNORE_SSL_ERRORS' => '1'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'Installer'
+    'HTTP_COOKIE' => 'advanced-frontend=i5nul078kciu4ciq2eeasneph2; _identity-frontend=407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.message.com/index.php?r=message%2Fcreate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'www.message.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'www.message.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '62937'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=message%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=message%2Findex'
+    'PATH_TRANSLATED' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => 'D:\\project\\advanced\\messageboard\\frontend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1556036305.9309
+    'REQUEST_TIME' => 1556036305
+]
+2019-04-23 16:22:11 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'frontend\models\message' in file: D:\project\advanced\messageboard/frontend/models/message.php. Namespace missing? in D:\project\advanced\messageboard\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\models...')
+#1 D:\project\advanced\messageboard\frontend\models\messageSearch.php(12): spl_autoload_call('frontend\\models...')
+#2 D:\project\advanced\messageboard\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\adva...')
+#3 [internal function]: yii\BaseYii::autoload('frontend\\models...')
+#4 D:\project\advanced\messageboard\frontend\controllers\MessageController.php(38): spl_autoload_call('frontend\\models...')
+#5 [internal function]: frontend\controllers\MessageController->actionIndex()
+#6 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(158): yii\base\InlineAction->runWithParams(Array)
+#8 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 D:\project\advanced\messageboard\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('message/index', Array)
+#10 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\project\advanced\messageboard\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2019-04-23 16:22:11 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][info][application] $_GET = [
+    'r' => 'message/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'i5nul078kciu4ciq2eeasneph2'
+    '_identity-frontend' => '407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga\",2592000]\";}'
+    '_csrf-frontend' => 'ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\86135\\AppData\\Roaming'
+    'CLASSPATH' => '.;D:\\soft\\jdk\\lib\\dt.jar;D:\\soft\\jdk\\lib\\tools.jar;'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-IAOL3F7'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\86135'
+    'JAVA_HOME' => 'D:\\soft\\jdk'
+    'LOCALAPPDATA' => 'C:\\Users\\86135\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-IAOL3F7'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\86135\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'D:\\soft\\xshell\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\soft\\Tortoise\\bin;D:\\soft\\Git\\cmd;D:\\soft\\jdk\\bin;D:\\phpstudy\\PHPTutorial\\php\\php-7.2.1-nts;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpstudy\\PHPTutorial\\MySQL\\bin;D:\\soft\\redis\\;C:\\Users\\86135\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\86135\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 142 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-IAOL3F7'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-IAOL3F7'
+    'USERNAME' => '86135'
+    'USERPROFILE' => 'C:\\Users\\86135'
+    'WEBKIT_IGNORE_SSL_ERRORS' => '1'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'Installer'
+    'HTTP_COOKIE' => 'advanced-frontend=i5nul078kciu4ciq2eeasneph2; _identity-frontend=407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.message.com/index.php?r=message%2Fcreate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'www.message.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'www.message.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '63251'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=message%2Findex'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=message%2Findex'
+    'PATH_TRANSLATED' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => 'D:\\project\\advanced\\messageboard\\frontend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1556036531.4505
+    'REQUEST_TIME' => 1556036531
+]
+2019-04-23 16:44:25 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][error][ParseError] ParseError: syntax error, unexpected '?>' in D:\project\advanced\messageboard\frontend\views\message\view.php:17
+Stack trace:
+#0 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\project\\adva...', Array)
+#1 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\project\\adva...', Array, Object(frontend\controllers\MessageController))
+#2 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\View->render('view', Array, Object(frontend\controllers\MessageController))
+#3 D:\project\advanced\messageboard\frontend\controllers\MessageController.php(56): yii\base\Controller->render('view', Array)
+#4 [internal function]: frontend\controllers\MessageController->actionView('1')
+#5 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#6 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(158): yii\base\InlineAction->runWithParams(Array)
+#7 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('view', Array)
+#8 D:\project\advanced\messageboard\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('message/view', Array)
+#9 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\project\advanced\messageboard\frontend\web\index.php(17): yii\base\Application->run()
+#11 {main}
+2019-04-23 16:44:25 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][info][application] $_GET = [
+    'r' => 'message/view'
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'i5nul078kciu4ciq2eeasneph2'
+    '_identity-frontend' => '407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga\",2592000]\";}'
+    '_csrf-frontend' => 'ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\86135\\AppData\\Roaming'
+    'CLASSPATH' => '.;D:\\soft\\jdk\\lib\\dt.jar;D:\\soft\\jdk\\lib\\tools.jar;'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-IAOL3F7'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\86135'
+    'JAVA_HOME' => 'D:\\soft\\jdk'
+    'LOCALAPPDATA' => 'C:\\Users\\86135\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-IAOL3F7'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\86135\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'D:\\soft\\xshell\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\soft\\Tortoise\\bin;D:\\soft\\Git\\cmd;D:\\soft\\jdk\\bin;D:\\phpstudy\\PHPTutorial\\php\\php-7.2.1-nts;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpstudy\\PHPTutorial\\MySQL\\bin;D:\\soft\\redis\\;C:\\Users\\86135\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\86135\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 142 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-IAOL3F7'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-IAOL3F7'
+    'USERNAME' => '86135'
+    'USERPROFILE' => 'C:\\Users\\86135'
+    'WEBKIT_IGNORE_SSL_ERRORS' => '1'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'Installer'
+    'HTTP_COOKIE' => 'advanced-frontend=i5nul078kciu4ciq2eeasneph2; _identity-frontend=407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.message.com/index.php?r=message%2Findex&page=4&per-page=5'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'www.message.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'www.message.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '65105'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=message%2Fview&id=1'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=message%2Fview&id=1'
+    'PATH_TRANSLATED' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => 'D:\\project\\advanced\\messageboard\\frontend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1556037865.2921
+    'REQUEST_TIME' => 1556037865
+]
+2019-04-23 16:55:37 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: dataProvider in D:\project\advanced\messageboard\frontend\views\message\index.php:27
+Stack trace:
+#0 D:\project\advanced\messageboard\frontend\views\message\index.php(27): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\project\\adva...', 27, Array)
+#1 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(348): require('D:\\project\\adva...')
+#2 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\project\\adva...', Array)
+#3 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\project\\adva...', Array, Object(frontend\controllers\MessageController))
+#4 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\View->render('index', Array, Object(frontend\controllers\MessageController))
+#5 D:\project\advanced\messageboard\frontend\controllers\MessageController.php(39): yii\base\Controller->render('index')
+#6 [internal function]: frontend\controllers\MessageController->actionIndex()
+#7 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(158): yii\base\InlineAction->runWithParams(Array)
+#9 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#10 D:\project\advanced\messageboard\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('message/index', Array)
+#11 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\project\advanced\messageboard\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2019-04-23 16:55:37 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][info][application] $_GET = [
+    'r' => 'message/index'
+    'page' => '1'
+    'per-page' => '5'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'i5nul078kciu4ciq2eeasneph2'
+    '_identity-frontend' => '407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga\",2592000]\";}'
+    '_csrf-frontend' => 'ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\86135\\AppData\\Roaming'
+    'CLASSPATH' => '.;D:\\soft\\jdk\\lib\\dt.jar;D:\\soft\\jdk\\lib\\tools.jar;'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-IAOL3F7'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\86135'
+    'JAVA_HOME' => 'D:\\soft\\jdk'
+    'LOCALAPPDATA' => 'C:\\Users\\86135\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-IAOL3F7'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\86135\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'D:\\soft\\xshell\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\soft\\Tortoise\\bin;D:\\soft\\Git\\cmd;D:\\soft\\jdk\\bin;D:\\phpstudy\\PHPTutorial\\php\\php-7.2.1-nts;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpstudy\\PHPTutorial\\MySQL\\bin;D:\\soft\\redis\\;C:\\Users\\86135\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\86135\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 142 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-IAOL3F7'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-IAOL3F7'
+    'USERNAME' => '86135'
+    'USERPROFILE' => 'C:\\Users\\86135'
+    'WEBKIT_IGNORE_SSL_ERRORS' => '1'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'Installer'
+    'HTTP_COOKIE' => 'advanced-frontend=i5nul078kciu4ciq2eeasneph2; _identity-frontend=407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.message.com/index.php?r=message%2Findex&page=4&per-page=5'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'www.message.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'www.message.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '50086'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=message%2Findex&page=1&per-page=5'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=message%2Findex&page=1&per-page=5'
+    'PATH_TRANSLATED' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => 'D:\\project\\advanced\\messageboard\\frontend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1556038537.3486
+    'REQUEST_TIME' => 1556038537
+]
+2019-04-23 16:56:31 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'app\assets\AppAsset' in file: D:\project\advanced\messageboard\frontend/assets/AppAsset.php. Namespace missing? in D:\project\advanced\messageboard\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\assets\\AppA...')
+#1 D:\project\advanced\messageboard\frontend\views\message\index.php(6): spl_autoload_call('app\\assets\\AppA...')
+#2 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(348): require('D:\\project\\adva...')
+#3 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\project\\adva...', Array)
+#4 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\project\\adva...', Array, Object(frontend\controllers\MessageController))
+#5 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\View->render('index', Array, Object(frontend\controllers\MessageController))
+#6 D:\project\advanced\messageboard\frontend\controllers\MessageController.php(44): yii\base\Controller->render('index', Array)
+#7 [internal function]: frontend\controllers\MessageController->actionIndex()
+#8 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Controller.php(158): yii\base\InlineAction->runWithParams(Array)
+#10 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#11 D:\project\advanced\messageboard\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('message/index', Array)
+#12 D:\project\advanced\messageboard\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\project\advanced\messageboard\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+2019-04-23 16:56:31 [127.0.0.1][1][i5nul078kciu4ciq2eeasneph2][info][application] $_GET = [
+    'r' => 'message/index'
+    'page' => '1'
+    'per-page' => '5'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'i5nul078kciu4ciq2eeasneph2'
+    '_identity-frontend' => '407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga\",2592000]\";}'
+    '_csrf-frontend' => 'ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\86135\\AppData\\Roaming'
+    'CLASSPATH' => '.;D:\\soft\\jdk\\lib\\dt.jar;D:\\soft\\jdk\\lib\\tools.jar;'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-IAOL3F7'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\86135'
+    'JAVA_HOME' => 'D:\\soft\\jdk'
+    'LOCALAPPDATA' => 'C:\\Users\\86135\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-IAOL3F7'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\86135\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'D:\\soft\\xshell\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\soft\\Tortoise\\bin;D:\\soft\\Git\\cmd;D:\\soft\\jdk\\bin;D:\\phpstudy\\PHPTutorial\\php\\php-7.2.1-nts;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpstudy\\PHPTutorial\\MySQL\\bin;D:\\soft\\redis\\;C:\\Users\\86135\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\86135\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 142 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\86135\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-IAOL3F7'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-IAOL3F7'
+    'USERNAME' => '86135'
+    'USERPROFILE' => 'C:\\Users\\86135'
+    'WEBKIT_IGNORE_SSL_ERRORS' => '1'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'Installer'
+    'HTTP_COOKIE' => 'advanced-frontend=i5nul078kciu4ciq2eeasneph2; _identity-frontend=407d009bb93409d0924b8811b4a2a28f5bb5fce928bab588911942efca93f8b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22hxmiByxSuVlZXs6G72vKgRYtpHpyA0Ga%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ce429e2d80c324499631f2654655322980a870e91e30dea47a99c643aaa0d511a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gRoBZc5gU7j-lRrK3eDWI4dPl_pJuQDP%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9,en;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.message.com/index.php?r=message%2Findex&page=4&per-page=5'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'www.message.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'www.message.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '50086'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.11.5'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=message%2Findex&page=1&per-page=5'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=message%2Findex&page=1&per-page=5'
+    'PATH_TRANSLATED' => 'D:\\project\\advanced\\messageboard\\frontend\\web'
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => 'D:\\project\\advanced\\messageboard\\frontend\\web/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1556038591.0883
+    'REQUEST_TIME' => 1556038591
+]
