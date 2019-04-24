@@ -1,3 +1,13 @@
+a.数据表：message.sql
+b.用户表是user表，字段role值为11时，才可以登录后台
+c.基本功能：
+    1.前台：登录；注册；留言--增删查
+    2.后台：登录；留言列表，回复留言，删除/查看留言；用户列表，用户---修改角色，删除用户
+**
+**
+**
+**
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
