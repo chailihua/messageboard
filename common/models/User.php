@@ -82,9 +82,9 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        $map = ['username' => $username, 'status' => self::STATUS_ACTIVE];          
-        if($_POST['LoginForm']['role']){
-            $map["role"] = $_POST['LoginForm']['role'];
+        $map = ['username' => $username, 'status' => self::STATUS_ACTIVE]; 
+        if(isset($_POST['LoginForm']['role'])){
+           $map["role"] = $_POST['LoginForm']['role'];
         }
         return static::findOne($map);
     }
