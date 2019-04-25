@@ -32,7 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'user_name',
                 'value'=>function($model){// 形参为此行记录对象
-                    $name = \backend\models\User::find()->select("username")->andWhere(['id' => $model->user_id])->one(); 
+                    $name = \backend\models\User::find()
+                            ->select(["username"])
+                            ->andWhere(['id' => $model->user_id])
+                            ->one(); 
                     if($name){
                         return $name->username;
                     }else{
@@ -65,7 +68,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'admin_id',
                 'value'=>function($model){// 形参为此行记录对象
-                    $name = \backend\models\User::find()->select("username")->andWhere(['id' => $model->admin_id])->one(); 
+                    $name = \backend\models\User::find()
+                        ->select(["username"])
+                        ->andWhere(['id' => $model->admin_id])
+                        ->one(); 
                     if($name){
                         return $name->username;
                     }else{
