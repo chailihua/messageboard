@@ -53,8 +53,14 @@ class MessageController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $user  = \backend\models\User::find()->select("username")->andWhere(['id' => $model->user_id])->one(); 
-        $admin = \backend\models\User::find()->select("username")->andWhere(['id' => $model->admin_id])->one(); 
+        $user  = \backend\models\User::find()
+            ->select(["username"])
+            ->andWhere(['id' => $model->user_id])
+            ->one(); 
+        $admin = \backend\models\User::find()
+            ->select(["username"])
+            ->andWhere(['id' => $model->admin_id])
+            ->one(); 
         if($user){
             $username = $user->username;
         }else{
@@ -109,7 +115,10 @@ class MessageController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-        $user  = \backend\models\User::find()->select("username")->andWhere(['id' => $model->user_id])->one(); 
+        $user  = \backend\models\User::find()
+            ->select(["username"])
+            ->andWhere(['id' => $model->user_id])
+            ->one(); 
         if($user){
             $username = $user->username;
         }else{
@@ -153,17 +162,22 @@ class MessageController extends Controller
     /**
     *未回复留言数量
     */
-    public function actionWaitreply()
+    public function actionWaitReply()
     {
-       return Message::find()->andWhere(['status' => '0'])->count('id'); 
+       return Message::find()
+            ->andWhere(['status' => '0'])
+            ->count('id'); 
     }
     /**
-    *未回复留言数量
+    *获取用户名
     */
-    public function actionGetuname()
+    public function actionGetUname()
     {
         $id = Yii::$app->request->get("id");
-        $name = User::find()->select("username")->andWhere(['id' => $id])->one(); 
+        $name = User::find()
+            ->select(["username"])
+            ->andWhere(['id' => $id])
+            ->one(); 
         if($name){
             return $name->username;
         }

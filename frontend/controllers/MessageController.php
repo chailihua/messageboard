@@ -64,7 +64,10 @@ class MessageController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $admin  = \backend\models\User::find()->select("username")->andWhere(['id' => $model->admin_id])->one(); 
+        $admin  = \backend\models\User::find()
+            ->select(["username"])
+            ->andWhere(['id' => $model->admin_id])
+            ->one(); 
         if($admin){
             $adminname = $admin->username;
         }else{
