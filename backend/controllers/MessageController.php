@@ -108,7 +108,6 @@ class MessageController extends Controller
      */
     public function actionUpdate($id)
     {
-        Yii::$app->getSession()->setFlash('success','已回复,');
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
