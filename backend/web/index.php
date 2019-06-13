@@ -1,4 +1,5 @@
 <?php
+define('BASE_PATH', dirname(__DIR__));
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 

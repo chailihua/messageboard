@@ -97,7 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format'=>'raw',
                 'value' => function($model){
                     $button = '' ;
-                    $showUrl = "?r=message/".($model->status == 0 ? "update" : "view")."&id=".$model->id; //查看详情
+                    $showUrl = "/message/".($model->status == 0 ? "update" : "view")."?id=".$model->id; //查看详情
                     $button .= Html::a($model->status == 0 ? '回复' : "详情", $showUrl, ['title' => '详情']).'<br>' ;
                     return $button;
                 }

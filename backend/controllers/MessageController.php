@@ -5,11 +5,14 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Message;
 use backend\models\MessageSearch;
+use yii\helpers\ArrayHelper;
+use yii\helpers\FileHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use backend\models\User;
-
+use yii\log\Logger;
+use backend\models\SendMailForm;
 /**
  * MessageController implements the CRUD actions for Message model.
  */
@@ -56,11 +59,11 @@ class MessageController extends Controller
         $user  = \backend\models\User::find()
             ->select(["username"])
             ->andWhere(['id' => $model->user_id])
-            ->one(); 
+            ->one();
         $admin = \backend\models\User::find()
             ->select(["username"])
             ->andWhere(['id' => $model->admin_id])
-            ->one(); 
+            ->one();
         if($user){
             $username = $user->username;
         }else{
@@ -105,6 +108,7 @@ class MessageController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->getSession()->setFlash('success','已回复,');
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
@@ -112,13 +116,20 @@ class MessageController extends Controller
             $model->reply_time = time();
             $model->admin_id = \Yii::$app->user->identity->id;
             if($model->save()){
+                //发送邮件通知
+                $remind = $this->MailRemind($id);
+                if($remind['code'] == 200){
+                    Yii::$app->getSession()->setFlash('success','已回复,'.$remind['message']);
+                }else{
+                    Yii::$app->getSession()->setFlash('error','已回复,'.$remind['message']);
+                }
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
         $user  = \backend\models\User::find()
             ->select(["username"])
             ->andWhere(['id' => $model->user_id])
-            ->one(); 
+            ->one();
         if($user){
             $username = $user->username;
         }else{
@@ -166,7 +177,7 @@ class MessageController extends Controller
     {
        return Message::find()
             ->andWhere(['status' => '0'])
-            ->count('id'); 
+            ->count('id');
     }
     /**
     *获取用户名
@@ -177,9 +188,77 @@ class MessageController extends Controller
         $name = User::find()
             ->select(["username"])
             ->andWhere(['id' => $id])
-            ->one(); 
+            ->one();
         if($name){
             return $name->username;
         }
-    }    
+    }
+    /**
+     *发送邮件
+     */
+    private function MailRemind($messageId)
+    {
+        if($messageId){
+            $info = Message::find()
+                ->asArray()
+                ->select(['add_time','message','user_id'])
+                ->where([
+                'id'=>$messageId,
+                ])
+                ->with('user')
+                ->one();
+            if(!$info) return [
+                'code'=>100,
+                'message'=>'参数错误，数据查询失败',
+            ];
+            if(!isset($info['user']['email'])) return [
+                'code'=>100,
+                'message'=>'参数错误，邮箱查询失败',
+            ];
+            $emailTo = $info['user']['email'];
+            if(!$emailTo) return [
+                'code'=>100,
+                'message'=> '邮箱地址为空',
+            ];
+            $path = BASE_PATH.DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR.date('Ymd');
+            FileHelper::createDirectory($path, 0777);
+            $file = $path.DIRECTORY_SEPARATOR.$messageId.'_message.txt';
+            $msg = '尊敬的'.$info['user']['username'].",您好:\n".'    您的留言:'.$info['message'].".\n".'    已回复';
+            $fileName = urlencode(date('Y年m月d日',$info['add_time']).'-留言回复通知.txt');
+            echo $fileName;
+            if(is_file($file)) unlink($file);
+            error_log($msg, 3, $file);
+            $message = Yii::$app->getMailer()->compose();
+            $message->attachContent(
+                file_get_contents($file),
+                ['fileName' => $fileName,'contentType' => 'text/plain']
+            );
+            $res = $message->setFrom('13501305697@163.com')
+                ->setTo($emailTo)
+                ->setSubject('留言回复结果通知')
+                ->setCharset("UTF-8")
+                ->send();
+            if($res){
+                return [
+                    'code'=>200,
+                    'message'=>'回复通知发送成功',
+                ];
+            }else{
+                $pathError = Yii::$app->getRuntimePath().DIRECTORY_SEPARATOR.'messageError'.DIRECTORY_SEPARATOR.date('Ymd');
+                FileHelper::createDirectory($pathError, 0777);
+                $fileError = $pathError.DIRECTORY_SEPARATOR.'message_log.txt';
+                error_log(date('Y-m-d H:i:s').'     留言ID:'.$messageId.'--邮件通知发送失败'."\n",3, $fileError);
+                return [
+                    'code'=>100,
+                    'message'=>'邮件发送失败',
+                ];
+            }
+        }else{
+            return [
+                'code'=>100,
+                'message'=>'留言ID不能为空',
+            ];
+        }
+
+    }
 }

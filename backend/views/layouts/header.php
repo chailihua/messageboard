@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 $this->registerJs(
-        '$.get("?r=message/wait-reply", function(result){
+        '$.get("/message/wait-reply", function(result){
             $(".label-success").html(result);
             $(".label-success").css("background-color","red");
         });'

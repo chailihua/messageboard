@@ -54,4 +54,8 @@ class Message extends \yii\db\ActiveRecord
             'reply_time' => '回复时间',
         ];
     }
+    public function getUser()
+    {
+        return $this->hasOne(User::class,['id'=>'user_id'])->select(['username','email']);
+    }
 }

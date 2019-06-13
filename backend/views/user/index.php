@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format'=>'raw',
                 'value' => function($model){
                     $button = '' ;
-                    $showUrl = "?r=user/view&id=".$model->id; //查看详情
+                    $showUrl = "/user/view?id=".$model->id; //查看详情
                     $button .= Html::a("详情", $showUrl, ['title' => '详情']).'<br>' ;
                     return $button;
                 }

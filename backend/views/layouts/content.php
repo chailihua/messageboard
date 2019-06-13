@@ -1,7 +1,6 @@
 <?php
 use yii\widgets\Breadcrumbs;
-use dmstr\widgets\Alert;
-
+use common\widgets\Alert;
 ?>
 <div class="content-wrapper">
     <section class="content-header">
@@ -30,7 +29,8 @@ use dmstr\widgets\Alert;
     </section>
 
     <section class="content">
-
+        <br />
+        <?= Alert::widget() ?>
         <?php  echo $content;?>
 
     </section>
