@@ -41,6 +41,6 @@
 # /backend/web/index.php
 # /backend/web/index-test.php
 # /backend/web/robots.txt
-.runtime
-.temp
+/frontend/runtime
+/backend/temp
 .idea
