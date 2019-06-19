@@ -11,8 +11,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use backend\models\User;
-use yii\log\Logger;
 use backend\models\SendMailForm;
+use yii\imagine\Image;
 /**
  * MessageController implements the CRUD actions for Message model.
  */
@@ -260,4 +260,20 @@ class MessageController extends Controller
         }
 
     }
+    /**
+     *测试--图片
+     */
+    public function actionCreateImage()
+    {
+        $this->layout = false;
+        //Imagine\Gd\Image->save()
+//        $res = Image::frame(Yii::getAlias('@webroot/assets/image/155628_988_47.png'), 5, '666', 0)
+//            ->rotate(-8) //旋转
+//            ->save(Yii::getAlias('@webroot/assets//a.png'), ['jpeg_quality' => 100]);
+        //生成缩略图
+        $res = Image::thumbnail('@webroot/assets/image/155628_988_47.png', 100, 100)
+            ->save(Yii::getAlias('@webroot/assets/b.png'), ['quality' => 50]);
+        print_r($res);
+    }
+
 }
